@@ -21,8 +21,9 @@
   };
 
   networking = {
-    hostName = "overlord"; # Define your hostname.
+    hostName = "nixos"; # Define your hostname.
     networkmanager.enable = true; # Enable networking
+    networkmanager.dhcp = "dhcpcd";
 
     # Open ports in the firewall.
     # networking.firewall.allowedTCPPorts = [ ... ];
@@ -57,7 +58,7 @@
     desktopManager.plasma6.enable = true;
     displayManager.sddm = {
       enable = true;
-      wayland = true;
+      wayland.enable = true;
     };
   };
 
@@ -68,7 +69,6 @@
     extraGroups = ["wheel" "power" "storage" "networkmanager" "docker"];
     packages = with pkgs; [
       fastfetch
-     # inputs.zen-browser.packages."${system}".generic
       brave
       firefox
       unzip
@@ -103,11 +103,6 @@
     };
   };
 
-  # Allow insecure packages
-  nixpkgs.config.permittedInsecurePackages = [
-     "docker-desktop"
-  ];
-
   home-manager = {
     # also pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};
@@ -126,13 +121,27 @@
       discord
       docker-desktop
       wget
+      dhcpcd
+      firefox
+      fastfetch
+      brave
+      unzip
+      kdePackages.ark
+      steam
+      obsidian
     ];
   };
   # List services that you want to enable:
   security = {
     rtkit.enable = true;
-    sudo.wheelNeedsPassword = false;
     polkit.enable = true;
+    sudo = {
+        sudo.enable = true;
+        wheelNeedsPassword = true;
+        extraConfig = ''
+          Defaults rootpw
+        '';
+    };
   };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

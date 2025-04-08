@@ -4,36 +4,38 @@
   pkgs,
   ...
 }: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-  ];
-  # Bootloader
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canBootFromEfi = true;
-      timeout = 5;
-      editor = true;
-    };
-    kernelParams = ["root=PARTUUID=${config.boot.loader.efi.partUuid}"];
-    kernelModules = ["amd-ucode"];
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.initrd.luks.devices."luks-c3ea31d3-4a4e-47db-996c-8f02ef999cd0".device = "/dev/disk/by-uuid/c3ea31d3-4a4e-47db-996c-8f02ef999cd0";
+  
+   networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+    networkmanager.dhcp = "dhcpcd";
   };
 
-  networking = {
-    hostName = "nixos"; # Define your hostname.
-    networkmanager.enable = true; # Enable networking
-    networkmanager.dhcp = "dhcpcd";
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
 
-    # Open ports in the firewall.
-    # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
-    # networking.firewall.enable = false;
+    enableRedistributableFirmware = true;
+    steam-hardware.enable = true;
 
-    # Configure network proxy if necessary
-    # networking.proxy.default = "http://user:password@proxy:port/";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    nvidia = {
+      modesetting.enable = true;
+      open = true;
+      nvidiaSettings = true;
+      package = pkgs.linuxPackages.nvidiaPackages.stable;
+    };
   };
 
   # Define Services
@@ -42,41 +44,71 @@
       enable = true;
       alsa.enable = true;
     };
+
+    fstrim.enable = true;
     flatpak.enable = true;
-
-  console.keyMap = "dk";  # Replace 'us' with your desired layout
-
-    # Enable the OpenSSH daemon.
     openssh.enable = true;
-    #xserver = {
-    #enable = true;
-    #xkb = {
-    #layout = "us";
-    #variant = "";
-    #};
-    #};
-    desktopManager.plasma6.enable = true;
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
+
+    xserver = {
+      videoDrivers = ["nvidia"];
+      desktopManager.gnome.enable = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
     };
   };
+
+  console.keyMap = "dk";
 
   users.users.hiboman = {
     isNormalUser = true;
     description = "hiboman";
     shell = pkgs.bash;
-    extraGroups = ["wheel" "power" "storage" "networkmanager" "docker"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
-      fastfetch
+      dhcpcd
       brave
-      firefox
+      fastfetch
       unzip
+      wget
+      discord
+      vscodium
+      obsidian
+      audacity
+      # minecraft
+      krita
+      gparted
+      filezilla
+      obs-studio
+      sparrow
+      # exodus
+      timeshift
+      tor-browser
+      keepassxc
+      trezord
+      github-desktop
+      thunderbird
+      element-desktop
+      putty
+      gimp
+      qbittorrent
+      vlc
+      anydesk
+      wine
+      heroic
+      # bless-hex-editor
+      # discordchatexporter-desktop
+      # onlyoffice-desktopeditors
+      signal-desktop
+      pidgin
+      pidginPackages.pidgin-otr
     ];
   };
 
   programs = {
-    bash.enable = true;
+    firefox.enable = true;
+    steam.enable = true;
     git.enable = true;
     nix-ld.enable = true;
   };
@@ -91,16 +123,12 @@
   i18n = {
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = {
-      LC_ADDRESS = "en_US.UTF-8";
-      LC_IDENTIFICATION = "en_US.UTF-8";
-      LC_MEASUREMENT = "en_US.UTF-8";
-      LC_MONETARY = "en_US.UTF-8";
-      LC_NAME = "en_US.UTF-8";
-      LC_NUMERIC = "en_US.UTF-8";
-      LC_PAPER = "en_US.UTF-8";
-      LC_TELEPHONE = "en_US.UTF-8";
-      LC_TIME = "en_US.UTF-8";
+      LC_ALL = "en_US.UTF-8";
     };
+  };
+
+  nix = {
+    settings.experimental-features = ["nix-command" "flakes"];
   };
 
   home-manager = {
@@ -112,36 +140,13 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment = {
-    systemPackages = with pkgs; [
-      kate
-      konsole
-      discord
-      docker-desktop
-      wget
-      dhcpcd
-      firefox
-      fastfetch
-      brave
-      unzip
-      kdePackages.ark
-      steam
-      obsidian
-    ];
-  };
-  # List services that you want to enable:
+  environment.systemPackages = with pkgs; [
+  ];
+
   security = {
     rtkit.enable = true;
+    sudo.wheelNeedsPassword = false;
     polkit.enable = true;
-    sudo = {
-        sudo.enable = true;
-        wheelNeedsPassword = true;
-        extraConfig = ''
-          Defaults rootpw
-        '';
-    };
   };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

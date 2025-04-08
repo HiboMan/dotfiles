@@ -66,7 +66,6 @@
     description = "hiboman";
     shell = pkgs.bash;
     extraGroups = ["networkmanager" "wheel" "docker"];
-    fonts.packages = pkgs.jetbrains-mono;
     packages = with pkgs; [
       flameshot
       dhcpcd
@@ -142,8 +141,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-  ];
+#  fonts.packages = with pkgs; ["jetbrains-mono"];
 
   security = {
     rtkit.enable = true;

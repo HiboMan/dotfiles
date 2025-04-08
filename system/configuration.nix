@@ -66,6 +66,7 @@
     description = "hiboman";
     shell = pkgs.bash;
     extraGroups = ["networkmanager" "wheel" "docker"];
+    fonts.packages = pkgs.jetbrains-mono;
     packages = with pkgs; [
       flameshot
       dhcpcd

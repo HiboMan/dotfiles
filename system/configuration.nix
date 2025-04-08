@@ -67,6 +67,7 @@
     shell = pkgs.bash;
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
+      flameshot
       dhcpcd
       brave
       fastfetch

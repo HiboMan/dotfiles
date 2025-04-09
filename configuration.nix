@@ -82,13 +82,11 @@
       vscodium
       obsidian
       audacity
-      # minecraft
       krita
       gparted
       filezilla
       obs-studio
       sparrow
-      # exodus
       timeshift
       tor-browser
       keepassxc
@@ -103,9 +101,6 @@
       anydesk
       wine
       heroic
-      # bless-hex-editor
-      # discordchatexporter-desktop
-      # onlyoffice-desktopeditors
       signal-desktop
       pidgin
       pidginPackages.pidgin-otr
@@ -136,7 +131,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-#  fonts.packages = with pkgs; ["jetbrains-mono"];
+  fonts.packages = with pkgs; [
+    jetbrains-mono
+  ];
 
   security = {
     rtkit.enable = true;

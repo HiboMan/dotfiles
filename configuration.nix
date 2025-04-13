@@ -19,7 +19,7 @@
    networking = {
     hostName = "nixos";
     networkmanager.enable = true;
-    networkmanager.dhcp = "dhcpcd";
+#    networkmanager.dhcp = "dhcpcd";
   };
 
   hardware = {
@@ -73,7 +73,7 @@
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       flameshot
-      dhcpcd
+#      dhcpcd
       brave
       fastfetch
       unzip

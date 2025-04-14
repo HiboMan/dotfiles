@@ -19,7 +19,6 @@
    networking = {
     hostName = "nixos";
     networkmanager.enable = true;
-#    networkmanager.dhcp = "dhcpcd";
   };
 
   hardware = {
@@ -72,8 +71,12 @@
     shell = pkgs.bash;
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
+      prismlauncher
+      discordchatexporter-cli
+      onlyoffice-bin
+      okteta
+      metadata-cleaner
       flameshot
-#      dhcpcd
       brave
       fastfetch
       unzip
@@ -90,7 +93,7 @@
       timeshift
       tor-browser
       keepassxc
-      trezord
+      trezor-suite
       github-desktop
       thunderbird
       element-desktop

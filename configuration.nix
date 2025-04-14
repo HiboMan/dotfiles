@@ -93,7 +93,6 @@
       timeshift
       tor-browser
       keepassxc
-      trezor-suite
       github-desktop
       thunderbird
       element-desktop

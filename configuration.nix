@@ -53,14 +53,13 @@
     flatpak.enable = true;
     openssh.enable = true;
 
-    xserver = {
-      videoDrivers = ["nvidia"];
-      desktopManager.gnome.enable = true;
-      displayManager.gdm = {
+    desktopManager.plasma6.enable = true;
+    displayManager.sddm = {
         enable = true;
-        wayland = true;
+        wayland.enable = true;
       };
-    };
+
+    xserver.videoDrivers = ["nvidia"];
   };
 
   console.keyMap = "dk";
@@ -132,6 +131,13 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  #environment.variables = {
+    #LIBVA_DRIVER_NAME="nvidia";
+    #XDG_SESSION_TYPE = "wayland";
+    #GBM_BACKEND = "nvidia-drm";
+    #__GLX_VENDOR_LIBRARY_NAME = "nvidia";
+  #};
 
   fonts.packages = with pkgs; [
     jetbrains-mono

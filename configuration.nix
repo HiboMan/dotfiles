@@ -52,6 +52,7 @@
     fstrim.enable = true;
     flatpak.enable = true;
     openssh.enable = true;
+    printing.enable = true;
 
     desktopManager.plasma6.enable = true;
     displayManager.sddm = {
@@ -59,7 +60,7 @@
         wayland.enable = true;
       };
 
-    xserver.videoDriver = "nvidia";
+    xserver.videoDrivers = ["nvidia"];
   };
 
   console.keyMap = "dk";

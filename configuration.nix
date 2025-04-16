@@ -59,7 +59,7 @@
         wayland.enable = true;
       };
 
-    xserver.videoDrivers = ["nvidia"];
+    xserver.videoDriver = "nvidia";
   };
 
   console.keyMap = "dk";

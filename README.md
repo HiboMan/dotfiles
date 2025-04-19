@@ -1,1 +1,1 @@
-move to grub for a more universal bootloader because of bios/uefi, create seperate nixos configuration files for a server and a computer
+move to grub for a more universal bootloader because of bios/uefi, create seperate nixos configuration files for a server and a computer, downgrade to 24.05

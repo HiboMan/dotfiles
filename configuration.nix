@@ -122,13 +122,8 @@
   # Setting up Virtualization
   virtualisation.docker.enable = true;
 
-  # Select internationalisation properties.
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = {
-      LC_ALL = "en_US.UTF-8";
-    };
-  };
+  # Set locale properties.
+  i18n.defaultLocale = "en_US.UTF-8";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

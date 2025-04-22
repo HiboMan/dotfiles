@@ -110,6 +110,8 @@
       signal-desktop
       pidgin
       pidginPackages.pidgin-otr
+      kdePackages.kio-fuse
+      kdePackages.kio-extras
     ];
   };
 

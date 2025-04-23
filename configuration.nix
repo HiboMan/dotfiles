@@ -120,6 +120,7 @@
     steam.enable = true;
     git.enable = true;
     nix-ld.enable = true;
+    xwayland.enable = true;
   };
 
   # Set your time zone.

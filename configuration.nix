@@ -20,16 +20,16 @@
     initrd.luks.devices."luks-5b026fe9-087b-4f0d-91bd-e2725d2a95af".device = "/dev/disk/by-uuid/5b026fe9-087b-4f0d-91bd-e2725d2a95af";
   };
 
-   networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
+  networking = {
+   hostName = "nixos";
+   networkmanager.enable = true;
   };
 
   hardware = {
     graphics = {
       enable = true;
       enable32Bit = true;
-    };
+  };
 
     pulseaudio.enable = false;
     enableRedistributableFirmware = true;
@@ -62,7 +62,7 @@
     displayManager.sddm = {
         enable = true;
         wayland.enable = true;
-      };
+    };
 
     xserver.videoDrivers = ["nvidia"];
   };

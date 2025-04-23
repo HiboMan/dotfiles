@@ -31,7 +31,6 @@
       enable32Bit = true;
     };
 
-    pulseaudio.enable = false;
     enableRedistributableFirmware = true;
     steam-hardware.enable = true;
 
@@ -53,6 +52,7 @@
       #jack.enable = true;
     };
 
+    pulseaudio.enable = false;
     fstrim.enable = true;
     flatpak.enable = true;
     openssh.enable = true;

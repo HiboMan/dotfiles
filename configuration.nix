@@ -20,11 +20,13 @@
     initrd.luks.devices."luks-5b026fe9-087b-4f0d-91bd-e2725d2a95af".device = "/dev/disk/by-uuid/5b026fe9-087b-4f0d-91bd-e2725d2a95af";
   };
 
+  # Network, Locales & Loaction
   networking = {
    hostName = "nixos";
    networkmanager.enable = true;
   };
 
+  # Hardware
   hardware = {
     graphics = {
       enable = true;
@@ -41,33 +43,30 @@
     };
   };
 
-  # Define Services
+  # Wayland, Keyboard layouts, Display Managers & Desktop Environments
   services = {
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      #jack.enable = true;
-    };
-
-    pulseaudio.enable = false;
     fstrim.enable = true;
     flatpak.enable = true;
     openssh.enable = true;
     printing.enable = true;
-
+    xserver.videoDrivers = ["nvidia"];
     desktopManager.plasma6.enable = true;
     displayManager.sddm = {
         enable = true;
         wayland.enable = true;
     };
-
-    xserver.videoDrivers = ["nvidia"];
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
   };
 
   console.keyMap = "dk";
 
+  # User, Apps & General Settings
   users.users.hiboman = {
     isNormalUser = true;
     description = "hiboman";
@@ -117,9 +116,14 @@
 
   programs = {
     firefox.enable = true;
-    steam.enable = true;
     git.enable = true;
     nix-ld.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+    };
   };
 
   # Set your time zone.
@@ -131,14 +135,21 @@
   # Set locale properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  # NixOS Settings
   nix = {
-    settings.experimental-features = ["nix-command" "flakes"];
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+    };
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment = {
+     #sessionVariables = {
+       #WLR_NO_HARDWARE_CURSORS = "1";
+       #NIXOS_OZONE_WL = "1";
+     #};
   };
 
   fonts.packages = with pkgs; [

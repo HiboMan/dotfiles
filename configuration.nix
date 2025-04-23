@@ -29,7 +29,7 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-  };
+    };
 
     pulseaudio.enable = false;
     enableRedistributableFirmware = true;

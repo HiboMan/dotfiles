@@ -75,6 +75,7 @@
     shell = pkgs.bash;
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
+      filen
       prismlauncher
       discordchatexporter-cli
       onlyoffice-bin

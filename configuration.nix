@@ -20,11 +20,14 @@
     initrd.luks.devices."luks-5b026fe9-087b-4f0d-91bd-e2725d2a95af".device = "/dev/disk/by-uuid/5b026fe9-087b-4f0d-91bd-e2725d2a95af";
   };
 
-  # Networking
+  # Network, Locale & Location Settings
   networking = {
    hostName = "nixos";
    networkmanager.enable = true;
   };
+
+  i18n.defaultLocale = "en_US.UTF-8";
+  time.timeZone = "Europe/Copenhagen";
 
   # Graphical Settings & Firmware & Steam Hardware Support
   hardware = {
@@ -123,10 +126,6 @@
       localNetworkGameTransfers.openFirewall = true;
     };
   };
-
-  # Locale & Location Settings
-  i18n.defaultLocale = "en_US.UTF-8";
-  time.timeZone = "Europe/Copenhagen";
 
   # Virtualisation
   virtualisation.docker.enable = true;

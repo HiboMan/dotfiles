@@ -20,7 +20,7 @@
     initrd.luks.devices."luks-5b026fe9-087b-4f0d-91bd-e2725d2a95af".device = "/dev/disk/by-uuid/5b026fe9-087b-4f0d-91bd-e2725d2a95af";
   };
 
-  # Network, Locales & Loaction
+  # Networking
   networking = {
    hostName = "nixos";
    networkmanager.enable = true;
@@ -66,7 +66,7 @@
 
   console.keyMap = "dk";
 
-  # User, Apps & General Settings
+  # User & Apps Configuration
   users.users.hiboman = {
     isNormalUser = true;
     description = "hiboman";
@@ -126,14 +126,12 @@
     };
   };
 
-  # Set your time zone.
+  # Locale & Location Settings
+  i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Europe/Copenhagen";
 
-  # Setting up Virtualization
+  # Virtualisation
   virtualisation.docker.enable = true;
-
-  # Set locale properties.
-  i18n.defaultLocale = "en_US.UTF-8";
 
   # NixOS Settings
   nix = {

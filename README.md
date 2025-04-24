@@ -1,1 +1,1 @@
-move to grub for a more universal bootloader because of bios/uefi, create seperate nixos configuration files for a server and a computer, downgrade to 24.05, set persistent keyboard layout in wayland & kde plasma, use inputs instead of config parameter in configuration.nix
+move to grub for a universally supported bootloader because of compatibility with bios, create seperate nixos configuration files for a server and a computer, downgrade to 24.05, set persistent keyboard layout in wayland & kde plasma, use inputs instead of config parameter in configuration.nix

@@ -1,1 +1,3 @@
-create seperate nixos configuration files for a server and a computer, downgrade to 24.05, set persistent keyboard layout in kwayland
+- create seperate nixos configuration files for a server and a computer
+- downgrade to 24.05
+- set persistent keyboard layout in kwayland

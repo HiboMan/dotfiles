@@ -26,16 +26,14 @@
    networkmanager.enable = true;
   };
 
-  # Hardware
+  # Graphical Settings & Firmware & Steam Hardware Support
   hardware = {
+    enableRedistributableFirmware = true;
+    steam-hardware.enable = true;
     graphics = {
       enable = true;
       enable32Bit = true;
     };
-
-    enableRedistributableFirmware = true;
-    steam-hardware.enable = true;
-
     nvidia = {
       modesetting.enable = true;
       open = true;

@@ -14,8 +14,13 @@
   # Bootloader.
   boot = {
     loader = {
-      systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        devices = [ "nodev" ];
+        efiSupport = true;
+        useOSProber = true;
+      };
     };
     initrd.luks.devices."luks-5b026fe9-087b-4f0d-91bd-e2725d2a95af".device = "/dev/disk/by-uuid/5b026fe9-087b-4f0d-91bd-e2725d2a95af";
   };

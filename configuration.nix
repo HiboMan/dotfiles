@@ -1,6 +1,5 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# Edit this file to configure your system.
+# Help is available in configuration.nix(5) man page & in the NixOS manual (accessible by running ‘nixos-help’).
 {
   inputs,
   pkgs,
@@ -11,18 +10,14 @@
     ./hardware-configuration.nix
   ];
 
-  # Bootloader.
-  boot = {
-    loader = {
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        devices = ["nodev"];
-        efiSupport = true;
-        useOSProber = true;
-      };
-    };
-    initrd.luks.devices."luks-5b026fe9-087b-4f0d-91bd-e2725d2a95af".device = "/dev/disk/by-uuid/5b026fe9-087b-4f0d-91bd-e2725d2a95af";
+  # Boot.
+  boot.initrd.luks.devices."luks-5b026fe9-087b-4f0d-91bd-e2725d2a95af".device = "/dev/disk/by-uuid/5b026fe9-087b-4f0d-91bd-e2725d2a95af";
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/nvme0n1";
+    extraEntriesBeforeNixOS = true;
+    efiSupport = true;
   };
 
   # Network, Time & Locale Settings

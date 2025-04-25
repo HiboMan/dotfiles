@@ -132,6 +132,7 @@
     firefox.enable = true;
     git.enable = true;
     nix-ld.enable = true;
+    xwayland.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true;

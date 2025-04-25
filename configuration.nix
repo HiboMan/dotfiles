@@ -15,7 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     enable = true;
-    device = "/dev/nvme0n1";
+    devices = ["nodev"];
     extraEntriesBeforeNixOS = true;
     efiSupport = true;
   };

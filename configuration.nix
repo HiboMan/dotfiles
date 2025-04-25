@@ -25,14 +25,27 @@
     initrd.luks.devices."luks-5b026fe9-087b-4f0d-91bd-e2725d2a95af".device = "/dev/disk/by-uuid/5b026fe9-087b-4f0d-91bd-e2725d2a95af";
   };
 
-  # Network, Locale & Location Settings
+  # Network, Time & Locale Settings
   networking = {
    hostName = "nixos";
    networkmanager.enable = true;
   };
 
-  i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Europe/Copenhagen";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "da_DK.UTF-8";
+      LC_IDENTIFICATION = "da_DK.UTF-8";
+      LC_MEASUREMENT = "da_DK.UTF-8";
+      LC_MONETARY = "da_DK.UTF-8";
+      LC_NAME = "da_DK.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
+    };
+  };
 
   # Graphical Settings & Firmware & Steam Hardware Support
   hardware = {

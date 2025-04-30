@@ -99,6 +99,7 @@
       unzip
       wget
       jetbrains.rust-rover
+      gcc
       vscodium
       obsidian
       audacity
@@ -125,7 +126,6 @@
       anydesk
       wine
       heroic
-      gcc
     ];
   };
 

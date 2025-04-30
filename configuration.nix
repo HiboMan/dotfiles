@@ -106,6 +106,7 @@
       gcc
       vscodium
       obsidian
+      bisq2
       audacity
       krita
       gparted

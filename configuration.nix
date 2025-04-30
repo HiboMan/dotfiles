@@ -126,7 +126,6 @@
       wine
       heroic
       fuse
-      nh
     ];
   };
 
@@ -134,6 +133,7 @@
     firefox.enable = true;
     git.enable = true;
     nix-ld.enable = true;
+    nh.enable = true;
     xwayland.enable = true; # probably deprecated
     steam = {
       enable = true;

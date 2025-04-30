@@ -90,7 +90,6 @@
     packages = with pkgs; [
       filen-desktop
       prismlauncher
-      discordchatexporter-cli
       onlyoffice-bin
       okteta
       metadata-cleaner
@@ -99,7 +98,7 @@
       fastfetch
       unzip
       wget
-      discord
+      jetbrains.rust-rover
       vscodium
       obsidian
       audacity
@@ -112,8 +111,13 @@
       tor-browser
       keepassxc
       github-desktop
+      signal-desktop
       thunderbird
-      element-desktop
+      discord
+      discordchatexporter-cli
+      telegram-desktop
+      pidgin
+      pidginPackages.pidgin-otr
       putty
       gimp
       qbittorrent
@@ -121,9 +125,6 @@
       anydesk
       wine
       heroic
-      signal-desktop
-      pidgin
-      pidginPackages.pidgin-otr
       kdePackages.kio-fuse
       kdePackages.kio-extras
     ];

@@ -126,6 +126,7 @@
       wine
       heroic
       fuse
+      fusePackages.fuse_2
     ];
   };
 

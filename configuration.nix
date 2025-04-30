@@ -125,8 +125,6 @@
       anydesk
       wine
       heroic
-      fuse
-      fusePackages.fuse_2
     ];
   };
 
@@ -140,6 +138,10 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
+    };
+    appimage = {
+      enable = true;
+      binfmt = true;
     };
   };
 

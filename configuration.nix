@@ -125,6 +125,7 @@
       anydesk
       wine
       heroic
+      gcc
     ];
   };
 

@@ -99,6 +99,10 @@
       unzip
       wget
       jetbrains.rust-rover
+      cargo
+      rustc
+      rustlings
+      clippy
       gcc
       vscodium
       obsidian

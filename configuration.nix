@@ -125,8 +125,6 @@
       anydesk
       wine
       heroic
-      kdePackages.kio-fuse
-      kdePackages.kio-extras
       fuse
     ];
   };

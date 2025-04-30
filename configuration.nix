@@ -126,6 +126,7 @@
       wine
       heroic
       fuse
+      nh
     ];
   };
 

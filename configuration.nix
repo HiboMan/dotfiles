@@ -134,7 +134,6 @@
     git.enable = true;
     nix-ld.enable = true;
     nh.enable = true;
-    xwayland.enable = true; # probably deprecated
     steam = {
       enable = true;
       remotePlay.openFirewall = true;

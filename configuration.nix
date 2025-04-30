@@ -127,6 +127,7 @@
       heroic
       kdePackages.kio-fuse
       kdePackages.kio-extras
+      fuse
     ];
   };
 
@@ -134,7 +135,7 @@
     firefox.enable = true;
     git.enable = true;
     nix-ld.enable = true;
-    xwayland.enable = true;
+    xwayland.enable = true; # probably deprecated
     steam = {
       enable = true;
       remotePlay.openFirewall = true;

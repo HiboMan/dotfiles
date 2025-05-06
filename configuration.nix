@@ -125,7 +125,7 @@
       pidgin
       pidginPackages.pidgin-otr
       putty
-      gimp
+      kdePackages.kdenlive
       qbittorrent
       vlc
       anydesk

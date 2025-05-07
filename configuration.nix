@@ -98,7 +98,6 @@
       fastfetch
       unzip
       wget
-      jetbrains.rust-rover
       cargo
       rustc
       rustlings

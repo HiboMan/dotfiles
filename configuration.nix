@@ -89,6 +89,7 @@
     shell = pkgs.bash;
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
+      alvr
       onionshare-gui
       prismlauncher
       onlyoffice-bin

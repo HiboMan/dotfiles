@@ -89,7 +89,7 @@
     shell = pkgs.bash;
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
-      onionshare
+      onionshare-gui
       prismlauncher
       onlyoffice-bin
       okteta

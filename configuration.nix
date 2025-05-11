@@ -87,7 +87,7 @@
     isNormalUser = true;
     description = "hiboman";
     shell = pkgs.bash;
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["wheel" "adbusers" "networkmanager" "docker"];
     packages = with pkgs; [
       alvr
       onionshare-gui
@@ -114,6 +114,10 @@
       filezilla
       obs-studio
       sparrow
+      trezor-suite
+      trezord
+      trezor-udev-rules
+      blockbook
       timeshift
       tor-browser
       keepassxc
@@ -143,6 +147,7 @@
     git.enable = true;
     nix-ld.enable = true;
     nh.enable = true;
+    adb.enable = true;
     appimage = {
       enable = true;
       binfmt = true;

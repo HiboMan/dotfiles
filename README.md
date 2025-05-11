@@ -1,6 +1,6 @@
+todo
 - create seperate nixos configuration files for a server and a computer
-- downgrade to 24.05
 - set persistent keyboard layout in kwayland
 - move important things to top of configuration.nix
 - enable secureboot
-- consider installing grub on a device rather than no device
+- remove trezor udev rules if not needed

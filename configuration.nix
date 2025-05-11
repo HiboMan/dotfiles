@@ -132,7 +132,8 @@
       anydesk
       wine
       heroic
-      #clamav
+      # clamav
+      # clamtk
     ];
   };
 
@@ -167,10 +168,10 @@
   nixpkgs.config.allowUnfree = true;
 
   environment = {
-     #sessionVariables = {
-       #WLR_NO_HARDWARE_CURSORS = "1";
-       #NIXOS_OZONE_WL = "1";
-     #};
+     # sessionVariables = {
+       # WLR_NO_HARDWARE_CURSORS = "1";
+       # NIXOS_OZONE_WL = "1";
+     # };
   };
 
   fonts.packages = with pkgs; [

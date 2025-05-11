@@ -117,19 +117,21 @@
       trezor-udev-rules
       timeshift
       tor-browser
+      qbittorrent
+      mullvad-vpn
       keepassxc
       github-desktop
       insomnia
       signal-desktop
       thunderbird
+      telegram-desktop
+      element-desktop
       discord
       discordchatexporter-cli
-      telegram-desktop
       pidgin
       pidginPackages.pidgin-otr
       putty
       kdePackages.kdenlive
-      qbittorrent
       vlc
       anydesk
       wine

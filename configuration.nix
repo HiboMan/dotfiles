@@ -118,6 +118,7 @@
       tor-browser
       keepassxc
       github-desktop
+      insomnia
       signal-desktop
       thunderbird
       discord

@@ -136,8 +136,6 @@
       anydesk
       wine
       heroic
-      clamav
-      clamtk
     ];
   };
 

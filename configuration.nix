@@ -37,8 +37,9 @@
     };
   };
 
-  # Graphical Settings & Firmware & Steam Hardware Support
+  # Hardware
   hardware = {
+    bluetooth.enable = true;
     enableRedistributableFirmware = true;
     steam-hardware.enable = true;
     graphics = {
@@ -48,11 +49,10 @@
     nvidia = {
       modesetting.enable = true;
       open = true;
-      nvidiaSettings = true;
     };
   };
 
-  # Wayland, Keyboard layouts, Display Managers & Desktop Environments
+  # Services
   services = {
     fstrim.enable = true;
     flatpak.enable = true;

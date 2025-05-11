@@ -179,8 +179,11 @@
 
   security = {
     rtkit.enable = true;
-    sudo.wheelNeedsPassword = false;
     polkit.enable = true;
+    sudo-rs = {
+      enable = true;
+      wheelNeedsPassword = false;
+    };
   };
 
   # This value determines the NixOS release from which the default

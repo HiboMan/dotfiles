@@ -115,7 +115,6 @@
       trezor-suite
       trezord
       trezor-udev-rules
-      blockbook
       timeshift
       tor-browser
       keepassxc

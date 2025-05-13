@@ -4,3 +4,4 @@ todo
 - move important things to top of configuration.nix
 - enable secureboot
 - remove trezor udev rules if not needed
+- switch to doas

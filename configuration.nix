@@ -93,6 +93,9 @@
       fastfetch
       unzip
       wget
+    # Development
+      dart
+      gel
       cargo
       rustc
       rustlings

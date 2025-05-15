@@ -93,7 +93,6 @@
       fastfetch
       unzip
       wget
-    # Development
       dart
       gel
       cargo
@@ -123,10 +122,7 @@
       element-desktop
       discord
       discordchatexporter-cli
-      pidgin
-      pidginPackages.pidgin-otr
       putty
-      kdePackages.kdenlive
       vlc
       anydesk
       wine

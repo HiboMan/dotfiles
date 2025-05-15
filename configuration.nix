@@ -109,10 +109,7 @@
       gparted
       filezilla
       obs-studio
-      sparrow
       trezor-suite
-      trezord
-      trezor-udev-rules
       timeshift
       tor-browser
       qbittorrent

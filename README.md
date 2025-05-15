@@ -3,5 +3,3 @@ todo
 - set persistent keyboard layout in kwayland
 - move important things to top of configuration.nix
 - enable secureboot
-- remove trezor udev rules if not needed
-- make comment-sections in user packages for development and more

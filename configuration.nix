@@ -122,7 +122,6 @@
       element-desktop
       discord
       discordchatexporter-cli
-      termius
       vlc
       anydesk
       wine

@@ -110,7 +110,10 @@
       gparted
       filezilla
       obs-studio
+      sparrow
+      electrum
       trezor-suite
+      trezord
       timeshift
       tor-browser
       qbittorrent

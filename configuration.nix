@@ -91,7 +91,9 @@
       flameshot
       brave
       fastfetch
+      p7zip
       unzip
+      unrar
       wget
       dart
       gel
